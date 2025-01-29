@@ -10,20 +10,6 @@ Develop a public API that returns the following information in JSON format.
 
 [Click here to read more about the task](./task/README.md)
 
-<!-- 2. **Requirements:**
-    - **Endpoints:**
-        1. ***POST*** /causes: *Create a new cause (fields: title, description, image URL).*
-        2. ***GET*** /causes: *Retrieve all causes.*
-        3. ***GET*** /causes/:id: *Retrieve a specific cause by ID.*
-        4. ***PUT*** /causes/:id: *Update a specific cause.*
-        5. ***DELETE*** /causes/:id: *Delete a cause.*
-        
-    - Add an additional endpoint:
-        1. ***POST*** /causes/:id/contribute: *Accept contributions to a cause (fields: name, email, amount).*
-    - Use **JSON** for request and response formats. -->
-
-
-
 ### Getting Started
 
 You can download/clone this project from this repo and set it up on your development environment, by following the steps below.
@@ -57,13 +43,14 @@ You can download/clone this project from this repo and set it up on your develop
 The **GET** RESTful Verb is the only request verb that is accepted by this endpoint, all other verb will **return 404 status code** 
 
 ***For Local Dev, Kinldy use any of your favourite API Testing Tool***
-## ***GET*** /
-   ### REQUEST
+## Endpoint
+#### ***GET*** /
+   #### REQUEST
    **Request Header**
    
         Content Type : application/json
   
-   ### RESPONSE 
+   #### RESPONSE 
    **Response  Header** 
     
         Content Type : application/json
@@ -77,3 +64,7 @@ The **GET** RESTful Verb is the only request verb that is accepted by this endpo
             "github_url": "<https://github.com/username/project-repo>"
         }
    ```
+
+   #### Example (using curl)
+      curl -X GET localhost:3000  -H 'Content-Type: application/json' ; echo ""
+
