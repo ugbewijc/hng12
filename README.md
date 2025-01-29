@@ -68,3 +68,12 @@ The **GET** RESTful Verb is the only request verb that is accepted by this endpo
    #### Example (using curl)
       curl -X GET localhost:3000  -H 'Content-Type: application/json' ; echo ""
 
+## Backlinks to:
+- https://hng.tech/hire/python-developers
+- https://hng.tech/hire/csharp-developers
+- https://hng.tech/hire/golang-developers
+- https://hng.tech/hire/php-developers
+- https://hng.tech/hire/java-developers
+- https://hng.tech/hire/nodejs-developers
+
+
