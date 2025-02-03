@@ -1,18 +1,18 @@
-<h1 style="text-align: center;">HNG12 Stage 0 Backend</h1>
+<h1 style="text-align: center;">HNG12 Stage 1 Backend</h1>
 
-## Task: Develop a Public API to Retrieve Basic Information.
+## Task: Number Classification API.
 
 ### Objective:
-Develop a public API that returns the following information in JSON format.
- - ***Your registered email address (used to register on the HNG12 Slack workspace).***
+Create an API that takes a number and returns interesting mathematical properties about it, along with a fun fact.
+ <!-- - ***Your registered email address (used to register on the HNG12 Slack workspace).***
  - ***The current datetime as an ISO 8601 formatted timestamp.***
- - ***The GitHub URL of the project's codebase.***
+ - ***The GitHub URL of the project's codebase.*** -->
 
-[Click here to read more about the task](./task/README.md)
+<!-- [Click here to read more about the task](./task/README.md) -->
 
 ### Getting Started
 
-You can download/clone this project from this repo and set it up on your development environment, by following the steps below.
+Kindly download/clone this project repo and set it up on your development environment, by following the steps below.
    #### Prerequisites
    You will need the folloing to run this program successfully
    - [NodeJs](https://nodejs.org/en/download) v22.12 or higher
@@ -30,6 +30,12 @@ You can download/clone this project from this repo and set it up on your develop
       ```sh
       cd hng12
       ```
+   2. Create a .env file and fill in required configuration (check [.evn.example](.evn.example) for reference)
+
+      ```sh
+      touch .env
+      ```
+   
    3. Install NPM packages
       ```sh
       pnpm install
@@ -42,9 +48,10 @@ You can download/clone this project from this repo and set it up on your develop
 ## API Documentation
 The **GET** RESTful Verb is the only request verb that is accepted by this endpoint, all other verb will **return 404 status code** 
 
-***For Local Dev, Kinldy use any of your favourite API Testing Tool***
+***Kindly use any of your favourite API Testing Tool***
 ## Endpoint
-#### ***GET*** /
+#### ***GET*** <your-domain.com>/api/classify-number?number=<number>
+- ***Note:*** 
    #### REQUEST
    **Request Header**
    
@@ -59,21 +66,25 @@ The **GET** RESTful Verb is the only request verb that is accepted by this endpo
    **Response Body**
    ```json
         {
-            "email": "email@example.com",
-            "current_datetime": "2025-01-30T09:30:00Z",
-            "github_url": "<https://github.com/username/project-repo>"
+         "number": <query_parameters>,
+         "is_prime": <false | true>,
+         "is_perfect": <false | true>,
+         "properties": [<"armstrong">, <"odd" | "even">],
+         "digit_sum": <sum_of_its_digits>,
+         "fun_fact": <"Response from the numbers API Query"> 
         }
    ```
-
+   #### Note
+   - Query Parameters must be a valid number
+   - The possible combinations for the properties field:
+     - ["armstrong", "odd"] - if the number is both an Armstrong number and odd
+     - ["armstrong", “even”] - if the number is an Armstrong number and even
+     - ["odd"] - if the number is not an Armstrong number but is odd
+     - [”even”] - if the number is not an Armstrong number but is even
+     
    #### Example (using curl)
-      curl -X GET localhost:3000  -H 'Content-Type: application/json' ; echo ""
+      curl -X GET <your-domain.com>/api/classify-number?number=370  -H 'Content-Type: application/json' ; echo ""
 
-## Backlinks to:
-- https://hng.tech/hire/python-developers
-- https://hng.tech/hire/csharp-developers
-- https://hng.tech/hire/golang-developers
-- https://hng.tech/hire/php-developers
-- https://hng.tech/hire/java-developers
-- https://hng.tech/hire/nodejs-developers
-
-
+## Resources
+- [Fun fact API:](http://numbersapi.com/#42)
+- [Parity_(mathematics)](https://en.wikipedia.org/wiki/Parity_(mathematics))

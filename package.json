@@ -1,13 +1,13 @@
 {
-  "name": "hng12_stage_0",
+  "name": "hng12_stage_1",
   "version": "1.0.0",
-  "description": "Github Repository for HNG Stage 0 Task",
+  "description": "Github Repository for HNG Stage 1 Task",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --env-file-if-exists=.env --watch index.js",
+    "test": "NODE_ENV=testing node --test --experimental-test-coverage"
   },
   "keywords": [],
   "author": "John Chioma",
@@ -17,6 +17,6 @@
     "express": "^4.21.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "supertest": "^7.0.0"
   }
 }

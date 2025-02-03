@@ -1,0 +1,6 @@
+# app env samples
+
+#'http://example-numbers-api.com/'
+NUMBER_API= 
+# trivia | math | date | year (based on http://numbersapi.com/)
+NUMBER_API_QUERY_TYPE = 
