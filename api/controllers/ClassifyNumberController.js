@@ -27,7 +27,9 @@ export default class ClassifyNumberController {
                 method: 'GET',
             })
                 .then(response => response.text())
-                .then(result => result)
+                .then(result => {
+                  return  result
+                })
                 .catch(error => 'unable to get fun fact');
             res.status(200).json(
                 {
