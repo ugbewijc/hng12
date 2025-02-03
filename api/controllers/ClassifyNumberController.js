@@ -9,10 +9,10 @@ export default class ClassifyNumberController {
         const queryDetails = req.query;
         try {
             const number = Number(queryDetails?.number);
-            if (!number && !queryDetails?.number) {
+            if (isNaN(number) && !queryDetails?.number) {
                 throw new Error('Number Query is required');
             }
-            if (!number) {
+            if (isNaN(number)) {
                 throw new Error(queryDetails?.number.match(/[^0-9]/g).join(''));
             }
             const properties = [];
@@ -44,7 +44,7 @@ export default class ClassifyNumberController {
         } catch (error) {
             return res.status(400).json(
                 {
-                    "number": queryDetails?.number,//error.message,//"alphabet"
+                    "number": queryDetails?.number || 'Invalid Query',//error.message,//"alphabet"
                     "error": true
                 }
             );
