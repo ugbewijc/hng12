@@ -6,8 +6,8 @@ import { isPrime, isPerfectNumber, sumOfDigits, isArmstrongNumber } from '../../
 export default class ClassifyNumberController {
     constructor() { }
     static async classifyNumber(req, res) {
+        const queryDetails = req.query;
         try {
-            const queryDetails = req.query;
             const number = Number(queryDetails?.number);
             if (!number && !queryDetails?.number) {
                 throw new Error('Number Query is required');
@@ -44,7 +44,7 @@ export default class ClassifyNumberController {
         } catch (error) {
             return res.status(400).json(
                 {
-                    "number": error.message,//"alphabet"
+                    "number": queryDetails?.number,//error.message,//"alphabet"
                     "error": true
                 }
             );
