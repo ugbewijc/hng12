@@ -21,7 +21,7 @@ export function isPerfectNumber(num) {
 }
 
 export function sumOfDigits(num) {
-    const numSum = num.toString().split('').map(Number).reduce((a, b) => a + b, 0);
+    return num.toString().split('').map(Number).reduce((a, b) => a + b, 0);
 }
 
 export function isArmstrongNumber(num) {
