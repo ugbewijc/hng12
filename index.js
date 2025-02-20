@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import  classifyNumberRouter  from './api/routes/classify_number.js';
 
 const app = express();
 app.use(cors());
@@ -8,12 +7,11 @@ app.use(express.json());
 
 const port = process.env.PORT || 3000;
 
-app.use('/api/classify-number', classifyNumberRouter);
 app.get('/', (req, res) => {
     res.status(200).json({
         "email": "ugbewijc@gmail.com",
-        "current_datetime": new Date().toISOString().split('.')[0] + 'Z',
-        "github_url": "https://github.com/ugbewijc/hng12"
+        // "current_datetime": new Date().toISOString().split('.')[0] + 'Z',
+        // "github_url": "https://github.com/ugbewijc/hng12"
     });
 })
 
